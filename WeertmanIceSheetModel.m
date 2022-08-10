@@ -3,7 +3,7 @@ function WeertmanIceSheetModel
 % Weertman ice sheet model (1974)
 
 close all;
-clear all;
+clear;
 
 f = figure('Name','Weertman Ice Sheet Model','numbertitle','off', ...
     'Position', [200, 100, 900, 600]);
