@@ -3,7 +3,7 @@ function MinimalGlacierModel
 % Minimal glacier model Oerlemans
 
 close all;
-clear all;
+clear;
 
 f = figure('Name','Minimal Glacier Model','numbertitle','off', ...
     'Position', [200, 100, 900, 600]);
@@ -270,7 +270,7 @@ plotval=strcat('L = ',num2str(L*1e-3),' km');
 text(17,-1750,plotval);
 plotval=strcat('H_m = ',num2str(Hm),' m');
 text(22,-1750,plotval);
-plotval=strcat('\Delta T = ',num2str(deltaT),' °C');
+plotval=strcat('\Delta T = ',num2str(deltaT),' Â°C');
 text(1,-1400,plotval);
 text(20,400,'\bf \fontsize{12} Glacier surface','BackgroundColor','w','Color','b');
 text(20,300,'\bf \fontsize{12} Bedrock','BackgroundColor','w','Color','k');
@@ -319,7 +319,7 @@ plotval=strcat('L = ',num2str(L*1e-3),' km');
 text(0.11,-4,plotval);
 plotval=strcat('H_m = ',num2str(Hm),' m');
 text(0.14,-4,plotval);
-plotval=strcat('\Delta T = ',num2str(deltaT),' °C');
+plotval=strcat('\Delta T = ',num2str(deltaT),' Â°C');
 text(0.022,2,plotval);
 
 hold off;
@@ -369,7 +369,7 @@ plotval=strcat('L = ',num2str(L*1e-3),' km');
 text(0,-4,plotval);
 plotval=strcat('H_m = ',num2str(Hm),' m');
 text(100,-4,plotval);
-plotval=strcat('\Delta T = ',num2str(deltaT),' °C');
+plotval=strcat('\Delta T = ',num2str(deltaT),' Â°C');
 text(-380,2,plotval);
 text(80,33,'\bf \fontsize{12} Stable branch','BackgroundColor','w','Color','b');
 text(80,31,'\bf \fontsize{12} Unstable branch','BackgroundColor','w','Color','r');
