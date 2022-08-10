@@ -3,7 +3,7 @@ function MarineIceSheetModel
 % Schoof experiments steady-state
 
 close all;
-clear all;
+clear;
 
 f = figure('Name','Marine Ice Sheet Model','numbertitle','off', ...
     'Position', [200, 100, 900, 600]);
