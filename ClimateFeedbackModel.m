@@ -273,8 +273,8 @@ function [p]=plotfigure(Sf,Te,Ee,Ein,Eout,T,Emin,Emax,Tmin,Tmax,epsilon)
     text(20,Emin-45,plotval);
     xlabel('Atmospheric temperature (°C)');
     ylabel('Energy (W m^{-2})');
-    text(-58,330,'\bf \fontsize{12} Incoming solar radiation','BackgroundColor','w','Color','r');
-    text(-58,315,'\bf \fontsize{12} Outgoing terrestrial radiation','BackgroundColor','w','Color','b');
+    text(-48,330,'\bf \fontsize{12} Incoming solar radiation','BackgroundColor','w','Color','r');
+    text(-48,315,'\bf \fontsize{12} Outgoing terrestrial radiation','BackgroundColor','w','Color','b');
 
     hold off;
 end
