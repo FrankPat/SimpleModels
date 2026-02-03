@@ -61,5 +61,5 @@ Data: GMSL dataset at CSIRO: https://research.csiro.au/slrwavescoast/sea-level/m
 lambda: coefficient for linear combination of T and dT/dt (MV)
 dH/dt = a T + b dT/dt = a (T + lambda dT/dt), so lambda = b/a
 
-The SCM-SLRM model also exists as a Jupyter Notebook and a Julia standalone programme.
+The SCM-SLRM model also exists as a Julia standalone programme.
 
