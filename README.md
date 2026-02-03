@@ -1,5 +1,5 @@
 # SimpleModels
-Simple climate and cryosphere models in MatLab
+Simple climate and cryosphere models in MatLab and Julia
 
 ClimateFeedbackModel.m
 
