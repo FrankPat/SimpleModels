@@ -17,6 +17,7 @@ WeertmanIceSheetModel.m:
 
 Plastic ice sheet model based on Weertman (1974). The model is controoled by the size of the accumulation area, the slope of the ELA and the latitudinal position of the ELA. Bedrock adjustment is incorporated. The model exhibits hysteresis as a function of ELA. Both the ice sheet profile and the equilibria can be displayed.
 
+
 Simple Climate Model (SCM) and Simple Climate and Sea Level Model (SCM-SLRM)
 
 Climate model emulator based on a basic energy balance model and extended with different feedback parameters.
@@ -40,10 +41,7 @@ Datasets used are:
 (3) Historical temperature changes (for optimization of Ff)
 (4) Future carbon emissions scenarios (SSPs)
 
-Mean global surface temperatures (yearly)
-This file contains a brief summary of the changes in Earth's global average surface temperature estimated by combining the Berkeley Earth land-surface temperature field with a reinterpolated version of the HadSST4 ocean temperature field. 
-
-The current citation for this dataset is: Rohde, R. A. and Hausfather, Z.: The Berkeley Earth Land/Ocean Temperature Record, Earth Syst. Sci. Data, 12, 3469-3479, https://doi.org/10.5194/essd-12-3469-2020, 2020. The dataset differs slightly from the dataset as described in the citation as HadSST3 has been replaced with the newer HadSST4, and associated interpolation parameters have been refit accordingly.  No other changes in methods were needed when moving to the new version of HadSST. http://berkeleyearth.lbl.gov/auto/Global/Land_and_Ocean_summary.txt
+Mean global surface temperatures (yearly). This file contains a brief summary of the changes in Earth's global average surface temperature estimated by combining the Berkeley Earth land-surface temperature field with a reinterpolated version of the HadSST4 ocean temperature field. The current citation for this dataset is: Rohde, R. A. and Hausfather, Z.: The Berkeley Earth Land/Ocean Temperature Record, Earth Syst. Sci. Data, 12, 3469-3479, https://doi.org/10.5194/essd-12-3469-2020, 2020. The dataset differs slightly from the dataset as described in the citation as HadSST3 has been replaced with the newer HadSST4, and associated interpolation parameters have been refit accordingly.  No other changes in methods were needed when moving to the new version of HadSST. http://berkeleyearth.lbl.gov/auto/Global/Land_and_Ocean_summary.txt
 
 Observed trends in total greenhouse gas concentration levels between 1860 and 2019, considering all greenhouse gases and other forcing agents (including aerosols) https://www.eea.europa.eu/ims/atmospheric-greenhouse-gas-concentrations
 
@@ -53,6 +51,13 @@ SSP emission scenarios: https://www.ipcc.ch/data/ and https://tntcat.iiasa.ac.at
 
 To convert from gigatonnes carbon to gigatonnes of carbon dioxide, you simply multiply 44 over 12. In other words, 1 gigatonne of carbon equals 3.67 gigatonnes of carbon dioxide.
 
+Sea level rise
 
+This code produces results of Vermeer and Rahmstorf.  "Global Sea Level Linked to Global Temperature", PNAS 2009 For a description of what it does, see that paper. Code written by Stefan Rahmstorf and Martin Vermeer. Please note that this is a scientific code to be used by scientists who know what they are doing; it is not "fool-proof" for the general user in the sense that all combinations of parameter choices, options etc. have been thoroughly tested. Please report any problems or errors to the authors. The code uses the SSAtrend of Moore et al. 2005 for smoothing the data, which can be downloaded at http://www.glaciology.net/software/ssatrend-m (As a simple matlab alternative, fitting a polynomial is available as an option below. This is not recommended; it gives only a poor fit, 
+although it has little effect on the future projections.) Reference: J. C. Moore, A. Grinsted, S. Jevrejeva, Eos 86, 226 (2005).
 
- 
+Data: GMSL dataset at CSIRO: https://research.csiro.au/slrwavescoast/sea-level/measurements-and-data/sea-level-data/
+
+lambda: coefficient for linear combination of T and dT/dt (MV)
+dH/dt = a T + b dT/dt = a (T + lambda dT/dt), so lambda = b/a
+
