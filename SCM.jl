@@ -78,10 +78,10 @@ endyear          = 2100  # End year of simulation
 OptimizeFeedback = false # Determine the feedback factor Ff from the relation between dTs0 and observed temperatures
 LandUseChange    = true  # Incorporate land use change in carbon emissions
 NoFeedback       = false
-OceanHeat        = true # Incorporate ocean delay + IPCC parameters
+OceanHeat        = false # Incorporate ocean delay + IPCC parameters
 
 # Control parameters for the sea level model
-SeaLevel         = true
+SeaLevel         = false
 startyearsea     = 1880
 ed               = 15  # embedding dimension (years) of SSAtrend smoother (15 was used in the paper)
 la_iterate       = true  # iterate for lambda. No iteration -> estimate a only
@@ -106,9 +106,9 @@ LaUnc            = 0.5  # uncertainty on feedback parameters
 
 if OceanHeat
     LaW          = 1.6  # 1.6: water vapour feedback
-    LaL          = -0.3  # -0.6: longwave radiation feedback
-    LaC          = 0.42  # -0.4 - +1: Cloud feedback (uncertain)
-    LaA          = 0.35  # 0.3 % albedo feedback
+    LaL          = -0.3  # -0.3: longwave radiation feedback
+    LaC          = 0.42  # -0.42 - +1: Cloud feedback (uncertain)
+    LaA          = 0.35  # 0.35 % albedo feedback
     LaUnc        = 0.65  # uncertainty on feedback parameters
 end
 
@@ -296,9 +296,11 @@ yh_lower = xh1 .* FfLo
 p2=plot(xh1, yh_upper, fillrange=yh_lower, fillcolor=:lightblue, linecolor=:transparent, fillalpha=0.5, label="")
 scatter!(dTs0, tmp, color=:red, marker=:circle, markersize=5, label="Data Points")
 plot!(dTs0, dTs0*Ff, color=:black, linewidth=2, linestyle=:dash, label="Fit Line")
+txt = L"\lambda_f = " * string(round(Lf, digits = 2)) * ""
+annotate!(0.05, 1.1, text(txt, 10, :left))
 #txt = @sprintf("Ff = %.6f", Ff)
 txt = L"f_f = " * string(round(Ff, digits = 2)) * ""
-annotate!(0.05, 1, text(txt, 10, :left))
+annotate!(0.05, 0.8, text(txt, 10, :left))
 xlabel!(L"\Delta T_{s,0}")
 ylabel!(L"\textrm{Observed} \, \Delta T_s")
 
